@@ -1,0 +1,38 @@
+{
+	"timeline":[
+		{"dk_seq":1,"dk_kind":"career", "dk_title":"삼성페이 플러그인 원터치개인", "dk_description":"빅스비를 이용한 삼성페이 플러그인 앱 '엄마에게 30만원 보내줘' 음성으로 계좌이체", "dk_part":"Android 개발", "dk_rate":"90%", "dk_period":"20170116~20170601", "dk_belong_to":"프리랜서"}
+		,{"dk_seq":2,"dk_kind":"career", "dk_title":"SDSA Mobile Asset Management", "dk_description":"Mobile Asset Management by QRCode", "dk_part":"Android 개발", "dk_rate":"100%", "dk_period":"20170901~20171031","dk_belong_to":"프리랜서"}
+		,{"dk_seq":3,"dk_kind":"career", "dk_title":"대림대 특강", "dk_description":"이메일 없이 협업하는 모바일앱", "dk_part":"Android 개발", "dk_rate":"100%", "dk_period":"201607~201608","dk_belong_to":"마드라스체크"}
+		,{"dk_seq":4,"dk_kind":"career", "dk_title":"Flow", "dk_description":"이메일 없이 협업하는 모바일앱", "dk_part":"Android 개발", "dk_rate":"100%", "dk_period":"20151101~20160630","dk_belong_to":"마드라스체크"}
+		,{"dk_seq":5,"dk_kind":"career", "dk_title":"Bizplay Android App", "dk_description":"비즈플레이에서 사용하는 3가지 안드로이드 앱인 '콜라보, 비즈캘린더, 연락처' 개발", "dk_part":"Android 개발", "dk_rate":"90%", "dk_period":"201408~201510","dk_belong_to":"Bizplay"}
+		,{"dk_seq":6,"dk_kind":"career", "dk_title":"Webcash Android App", "dk_description":"웹케시에서 진행하는 모바일 사업의 안드로이드 앱 개발 (NH수금박사, 그린메시지, PSB LBS Agent 2.0)", "dk_part":"Android 개발", "dk_rate":"90%", "dk_period":"201403~201407","dk_belong_to":"웹케시"}
+		,{"dk_seq":7,"dk_kind":"career", "dk_title":"단골 3.0", "dk_description":"장소기반 서비스 단골 2.0 유지보수, 장소기반 SNS 서비스인 버킷플레이스, 단골 3.0 런칭", "dk_part":"Android 개발", "dk_rate":"100%", "dk_period":"201201~201402","dk_belong_to":"웹케시"}
+		,{"dk_seq":8,"dk_kind":"career", "dk_title":"단골 2.0", "dk_description":"자사상품 단골개발 및 안드로이드라이브러리 공통화 작업", "dk_part":"Android 개발", "dk_rate":"100%", "dk_period":"201210~201212","dk_belong_to":"웹케시"}
+		,{"dk_seq":9,"dk_kind":"career", "dk_title":"SmartOffice 365 for Tablet", "dk_description":"SO365 for Tablet 개발 및 안드로이드라이브러리 공통화 작업", "dk_part":"Android 개발", "dk_rate":"50%", "dk_period":"201207~201209","dk_belong_to":"웹케시"}
+		,{"dk_seq":10,"dk_kind":"career", "dk_title":"우리은행 특화서비스 개발", "dk_description":"우리은행 모바일 특화서비스 개발, 태블릿뱅킹 플랫폼 구축 사업에 참여", "dk_part":"Android 개발", "dk_rate":"40%", "dk_period":"201104~201203","dk_belong_to":"웹케시"}
+		,{"dk_seq":11,"dk_kind":"career", "dk_title":"우리금융 모바일오피스 개발", "dk_description":"우리금융 모바일오피스 개발", "dk_part":"Android 개발", "dk_rate":"40%", "dk_period":"201102~201103","dk_belong_to":"웹케시"}
+		,{"dk_seq":12,"dk_kind":"career", "dk_title":"새마을금고 스마트뱅킹 개발", "dk_description":"새마을금고 스마트뱅킹 개발", "dk_part":"Android 개발", "dk_rate":"60%", "dk_period":"201012~201101","dk_belong_to":"웹케시"}
+		,{"dk_seq":13,"dk_kind":"career", "dk_title":"토마토저축은행 스마트뱅킹 개발", "dk_description":"토마토저축은행 스마트뱅킹 개발", "dk_part":"Android 개발", "dk_rate":"30%", "dk_period":"201010~201011","dk_belong_to":"웹케시"}
+		,{"dk_seq":14,"dk_kind":"career", "dk_title":"웹케시 오피스 365 개발", "dk_description":"웹케시 오피스 365 개발", "dk_part":"Android 개발", "dk_rate":"30%", "dk_period":"201009~201010","dk_belong_to":"웹케시"}
+		,{"dk_seq":15,"dk_kind":"career", "dk_title":"기업은행 스마트뱅킹 개발", "dk_description":"기업은행 스마트뱅킹 메인화면 UI 개발", "dk_part":"Android 개발", "dk_rate":"25%", "dk_period":"201007~201008","dk_belong_to":"웹케시"}
+		,{"dk_seq":16,"dk_kind":"career", "dk_title":"국민은행 모바일앱 개발", "dk_description":"KB StarPlus 메인화면, 입출금 등록/수정/삭제 개발", "dk_part":"Android 개발", "dk_rate":"20%", "dk_period":"201005~201008","dk_belong_to":"웹케시"}
+		,{"dk_seq":17,"dk_kind":"career", "dk_title":"우리은행 스마트뱅킹 개발", "dk_description":"우리은행 스마트뱅킹 화면 UI 개발", "dk_part":"Android 개발", "dk_rate":"10%", "dk_period":"201004~201006","dk_belong_to":"웹케시"}
+		,{"dk_seq":18,"dk_kind":"career", "dk_title":"웹케시 재작", "dk_description":"iTMS-NT, iCats-Router, iTX-Router, ERPAdmin", "dk_part":"개발", "dk_rate":"30%", "dk_period":"201004~201006","dk_belong_to":"웹케시"}
+		,{"dk_seq":19,"dk_kind":"career", "dk_title":"오늘과내일 재직", "dk_description":"보험사 아웃바운드 콜센터 솔루션, BMS 시스템", "dk_part":"개발", "dk_rate":"10%", "dk_period":"201004~201006","dk_belong_to":"오늘과내일"}
+	],
+
+	"profile":{
+		"name":"최은경",
+		"birthdate":"19XX년 11월 12일",
+		"gender" : "여자",
+		"cellphone":"010-4158-1XXXX",
+		"email":"dilky@naver.com",
+		"address":"경기도 안양시 만안구 연현로 65"
+	},
+
+	"licensed" : {
+		"title":"정보처리기사",
+		"obtain":"2018.09.17"
+	}
+
+}

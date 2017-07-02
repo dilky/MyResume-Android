@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyResume</string>
+    <string name="title_profile">내 정보</string>
+    <string name="title_timeline">타임라인</string>
+    <string name="title_recommendation">추천</string>
+
+
+    <string name="text_birthdate">생년월일</string>
+    <string name="text_gender">성별</string>
+    <string name="text_cellphoneno">연락처</string>
+    <string name="text_email">이메일</string>
+    <string name="text_address">거주지</string>
+
+</resources>
