@@ -3,6 +3,7 @@ package net.dilkyzhart.myresume.app;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,16 +21,8 @@ import net.dilkyzhart.myresume.app.firebase.models.MyProfile;
 
 public class MyProfileFragment extends Fragment {
 
-    private final String PHOTO_URL = "https://firebasestorage.googleapis.com/v0/b/myresume-android.appspot.com/o/profile_photo.png?alt=media&token=46d2f063-15d0-4a5c-a08d-6d5271016ce0";
-
     public static MyProfileFragment newInstance() {
         MyProfileFragment f = new MyProfileFragment();
-
-        // Supply index input as an argument.
-//        Bundle args = new Bundle();
-//        args.putInt("index", index);
-//        f.setArguments(args);
-
         return f;
     }
 
@@ -55,10 +48,11 @@ public class MyProfileFragment extends Fragment {
                 if (!(data instanceof MyProfile))
                     return;
 
-                MyProfile myProfile = (MyProfile)data;
+                final MyProfile myProfile = (MyProfile)data;
 
                 final ImageView iv_MyPhoto = (ImageView) contentView.findViewById(R.id.iv_MyPhoto);
-                Glide.with(getActivity()).load(PHOTO_URL).into(iv_MyPhoto);
+                if (!TextUtils.isEmpty(myProfile.photo_url) )
+                    Glide.with(MyProfileFragment.this).load(myProfile.photo_url).into(iv_MyPhoto);
 
                 TextView tvName = (TextView) contentView.findViewById(R.id.tv_Name);
                 TextView tvBirthdate = (TextView) contentView.findViewById(R.id.tv_Birthdate);
@@ -67,13 +61,14 @@ public class MyProfileFragment extends Fragment {
                 TextView tvEmail = (TextView) contentView.findViewById(R.id.tv_Email);
                 TextView tvAddress = (TextView) contentView.findViewById(R.id.tv_Address);
 
-                tvName.setText(myProfile.getName());
+                tvName.setText(myProfile.name);
 
-                tvBirthdate.setText(myProfile.getBirthDate());
-                tvGender.setText(myProfile.getGender());
-                tvCellphoneNo.setText(myProfile.getCellPhoneNo());
-                tvEmail.setText(myProfile.getEmail());
-                tvAddress.setText(myProfile.getAddress());
+                tvBirthdate.setText(myProfile.birthdate);
+                tvGender.setText(myProfile.gender);
+                tvCellphoneNo.setText(myProfile.cellphone);
+                tvEmail.setText(myProfile.email);
+                tvAddress.setText(myProfile.address);
+
             }
         });
     }

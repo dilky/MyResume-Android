@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_Title"
+                android:singleLine="true"
+                android:hint="프로젝트명 또는 회사명,학교명을 입력하세요"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/et_Period"
+                android:singleLine="true"
+                android:hint="1999년 1월 1일 ~ 1999년 12월 31일"
+                android:layout_marginTop="@dimen/in_content_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/et_BelongTo"
+                android:singleLine="true"
+                android:hint="소속을 입력하세요(학교명, 기업명 등)"
+                android:layout_marginTop="@dimen/in_content_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_Rate"
+                    android:singleLine="true"
+                    android:hint="참여율을 입력하세요(ex:100%)"
+                    android:layout_marginTop="@dimen/in_content_margin"
+                    android:layout_weight="2"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/et_Seq"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:hint="순서"
+                    android:layout_marginTop="@dimen/in_content_margin"
+                    android:layout_weight="1"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_Description"
+                android:minLines="3"
+                android:hint="상세내용을 입력하세요"
+                android:layout_marginTop="@dimen/in_content_margin"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnAdd"
+                android:text="등록"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

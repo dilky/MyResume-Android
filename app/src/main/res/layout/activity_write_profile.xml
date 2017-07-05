@@ -5,11 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:background="#dddddd"
-        android:layout_width="match_parent"
-        android:layout_height="150dp" />
-
     <ScrollView
         android:fillViewport="true"
         android:layout_width="match_parent"
@@ -20,18 +15,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/iv_MyPhoto"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center_horizontal"
+            <RelativeLayout
                 android:layout_marginTop="50dp"
-                android:layout_width="@dimen/profile_photo_width"
-                android:layout_height="@dimen/profile_photo_height"
-                android:src="@drawable/persion_icon" />
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_MyPhoto"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:layout_width="@dimen/profile_photo_width"
+                    android:layout_height="@dimen/profile_photo_height"
+                    android:src="@drawable/persion_icon" />
+                <ImageView
+                    android:id="@+id/iv_selectPhoto"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:onClick="onSelectMyPhotoClick"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_Name"
+            <EditText
+                android:id="@+id/et_Name"
+                android:hint="Enter Your Name"
+                android:gravity="center"
                 android:singleLine="true"
                 android:textSize="26sp"
                 android:textColor="#333333"
@@ -58,11 +66,14 @@
                         android:textSize="16sp"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/tv_Birthdate"
+                    <EditText
+                        android:id="@+id/et_Birthdate"
+                        android:singleLine="true"
+                        android:hint="1995년 12월 25일"
                         android:textSize="18sp"
                         android:textColor="#333333"
-                        android:layout_width="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
@@ -76,11 +87,14 @@
                         android:textSize="16sp"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/tv_Gender"
+                    <EditText
+                        android:id="@+id/et_Gender"
+                        android:hint="여자"
                         android:textSize="18sp"
                         android:textColor="#333333"
-                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
@@ -94,11 +108,14 @@
                         android:textSize="16sp"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/tv_CellphoneNo"
+                    <EditText
+                        android:id="@+id/et_CellphoneNo"
                         android:textSize="18sp"
                         android:textColor="#333333"
-                        android:layout_width="wrap_content"
+                        android:hint="휴대폰번호"
+                        android:singleLine="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
@@ -112,11 +129,14 @@
                         android:textSize="16sp"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/tv_Email"
+                    <EditText
+                        android:id="@+id/et_Email"
                         android:textSize="18sp"
                         android:textColor="#333333"
-                        android:layout_width="wrap_content"
+                        android:hint="example@daelim.ac.kr"
+                        android:singleLine="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
@@ -130,25 +150,16 @@
                         android:textSize="16sp"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/tv_Address"
+                    <EditText
+                        android:id="@+id/et_Address"
                         android:textSize="18sp"
                         android:textColor="#333333"
-                        android:layout_width="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
-                <!--<Button-->
-                    <!--android:id="@+id/btn_UpdateMyInfo"-->
-                    <!--android:visibility="gone"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:text="@string/text_modify_my_info"-->
-                    <!--android:layout_marginBottom="@dimen/item_vertical_margin"-->
-                    <!--android:layout_width="300dp"-->
-                    <!--android:layout_height="wrap_content" />-->
-
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

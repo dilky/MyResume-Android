@@ -8,37 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:280544358608:android:c4e574c4056f47a1",
-        "android_client_info": {
-          "package_name": "net.dilkyzhart.myresume"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "280544358608-1fi9k0sodpam1dnp4lj79m2kmtb9ueho.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDWufFWXFRxLyFV0pzy2g9xtku3kqg4iM4"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:280544358608:android:b59801e09b0ff26b",
         "android_client_info": {
           "package_name": "net.dilkyzhart.myresume.app"

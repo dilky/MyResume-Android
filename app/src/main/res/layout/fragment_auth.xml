@@ -2,46 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="#fefefe"
     android:layout_width="300dp"
     android:layout_height="300dp">
 
-    <FrameLayout
-        android:layout_width="300dp"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="280dp"
         android:layout_height="250dp">
 
-        <Button
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
             android:layout_marginTop="28dp"
-            android:onClick="onAuthAnonymous"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="익명인증" />
-    </FrameLayout>
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="당신의 구글 계정을 이용해 로그인하세요. 프로필의 주인에게 메시지를 보낼 수 있습니다."
+            android:textSize="16sp"
+            android:textColor="#777777"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 
     <ImageView
         android:background="@color/color_vertical_line"
         android:layout_width="match_parent"
         android:layout_height="1dp" />
-    <LinearLayout
+    <TextView
+        android:text="다음에 하기"
+        android:id="@+id/tv_Exit"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <TextView
-            android:text="나가기"
-            android:id="@+id/tv_Exit"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="1dp"
-            android:layout_height="match_parent" />
-        <ImageView
-            android:background="@color/color_vertical_line"
-            android:layout_width="1dp"
-            android:layout_height="match_parent" />
-        <TextView
-            android:text="익명인증"
-            android:onClick="onAuthAnonymous"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="1dp"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        android:layout_height="50dp" />
 </LinearLayout>
