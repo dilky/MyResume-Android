@@ -29,6 +29,11 @@ public class PostInfo {
     @PropertyName("dk_belong_to")
     public String belong_to;       // 소속
 
+    public String postKey;
+    public long countLikes = 0;
+    public boolean clickable = false;
+    public boolean isReadFeedback = false;
+
 
     @Exclude
     public Map<String, Object> toMap() {

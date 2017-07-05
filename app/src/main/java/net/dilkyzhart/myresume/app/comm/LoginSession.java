@@ -40,6 +40,10 @@ public class LoginSession {
         return userEmail;
     }
 
+    public String getUserUUID() {
+        return userUUID;
+    }
+
     public boolean isLogin() {
         return isLogin;
     }

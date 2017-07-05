@@ -33,6 +33,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import net.dilkyzhart.myresume.app.comm.LoginSession;
 import net.dilkyzhart.myresume.app.firebase.ReceiveValueListener;
 import net.dilkyzhart.myresume.app.firebase.models.AdminInfo;
+import net.dilkyzhart.myresume.app.firebase.models.UserInfo;
 import net.dilkyzhart.myresume.app.write.WriteCareer;
 import net.dilkyzhart.myresume.app.write.WriteMyProfile;
 
@@ -320,6 +321,9 @@ public class TimelineActivity extends AppCompatActivity {
 
             // 로그인 정보 객체 초기화
             LoginSession.getInstance().initialize(acct.getDisplayName(), acct.getEmail(), acct.getId());
+
+            // 사용자 정보 등록
+            UserInfo.AddUserWithGoogle(new UserInfo(acct.getId(), acct.getEmail(), acct.getDisplayName()));
 
             // 어드민 정보 조회하기
             AdminInfo.Read(new ReceiveValueListener() {

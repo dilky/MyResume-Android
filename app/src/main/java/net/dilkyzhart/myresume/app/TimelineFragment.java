@@ -7,15 +7,20 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import net.dilkyzhart.myresume.app.comm.FormatUtils;
+import net.dilkyzhart.myresume.app.comm.LoginSession;
 import net.dilkyzhart.myresume.app.firebase.ReceiveValueListener;
 import net.dilkyzhart.myresume.app.firebase.models.MyTimeline;
+import net.dilkyzhart.myresume.app.firebase.models.PostFeecback;
 import net.dilkyzhart.myresume.app.firebase.models.PostInfo;
 
 import java.util.ArrayList;
@@ -87,16 +92,54 @@ public class TimelineFragment extends Fragment {
             return holder;
         }
 
+        private void setImageLikeButton(ImageView imageView, boolean clickable) {
+            if (clickable) {
+                imageView.setImageResource(R.drawable.ic_btn_like_dis);
+            } else {
+                imageView.setImageResource(R.drawable.ic_btn_like);
+            }
+        }
+
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            PostViewHolder postViewHolder = (PostViewHolder) holder;
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+
+            final PostViewHolder postViewHolder = (PostViewHolder) holder;
             postViewHolder.tvRate.setText(items.get(position).rate);
             postViewHolder.tvTitle.setText(items.get(position).title);
-            postViewHolder.tvPeriod.setText(FormatUtils.getDate(items.get(position).period));
+            postViewHolder.tvPeriod.setText(items.get(position).period);
             postViewHolder.tvDescription.setText(items.get(position).description);
             postViewHolder.tvBelongTo.setText(items.get(position).belong_to);
 
-            //setAnimation(postViewHolder.tvTitle, position);
+            postViewHolder.tvCountLikes.setText(String.valueOf(items.get(position).countLikes));
+            setImageLikeButton(postViewHolder.ivLike, items.get(position).clickable);
+
+            Log.d("dilky", "onBindViewHolder(position:" + position + ", clickable:" + items.get(position).clickable);
+
+            // 한번만 조회하기 위해 플래그 확인
+            if (!items.get(position).isReadFeedback) {
+                PostFeecback.ReadLikes(items.get(position).postKey, new ReceiveValueListener() {
+                    @Override
+                    public void onDataReceive(Object data) {
+                        PostFeecback.PostLikes postLikes = (PostFeecback.PostLikes) data;
+
+                        items.get(position).clickable = postLikes.clickable;
+                        items.get(position).countLikes = postLikes.countLikes;
+
+                        notifyItemChanged(position);
+
+                        if (items.get(position).clickable) {
+                            postViewHolder.ivLike.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    PostFeecback.LikeToIncrease(items.get(position).postKey);
+                                }
+                            });
+                        }
+                        //
+                        items.get(position).isReadFeedback = true;
+                    }
+                });
+            }
         }
 
         @Override
@@ -111,6 +154,8 @@ public class TimelineFragment extends Fragment {
             public TextView tvDescription;
             public TextView tvBelongTo;
             public LinearLayout imageGroup;
+            public ImageView ivLike;
+            public TextView tvCountLikes;
 
             public PostViewHolder(View view) {
                 super(view);
@@ -120,6 +165,8 @@ public class TimelineFragment extends Fragment {
                 tvDescription = (TextView) view.findViewById(R.id.description);
                 tvBelongTo = (TextView) view.findViewById(R.id.belong_to);
                 imageGroup = (LinearLayout) view.findViewById(R.id.imageGroup);
+                ivLike = (ImageView) view.findViewById(R.id.iv_Like);
+                tvCountLikes = (TextView) view.findViewById(R.id.tv_CountLikes);
             }
         }
 

@@ -1,6 +1,8 @@
 package net.dilkyzhart.myresume.app.firebase.models;
 
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -10,6 +12,7 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import net.dilkyzhart.myresume.app.R;
 import net.dilkyzhart.myresume.app.firebase.ReceiveValueListener;
 
 import java.util.ArrayList;
@@ -40,27 +43,7 @@ public class MyTimeline {
 
         newDatabaseInstance();
 
-//
-//        // Create new post at /user-posts/$userid/$postid and at
-//        // /posts/$postid simultaneously
-//        String key = timelineRef.child("posts").push().getKey();
-//        Post post = new Post(userId, username, title, body);
-//        Map<String, Object> postValues = post.toMap();
-//
-//        Map<String, Object> childUpdates = new HashMap<>();
-//        childUpdates.put("/posts/" + key, postValues);
-//        childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
-//
-//        mDatabase.updateChildren(childUpdates);
-
         String key = timelineRef.push().getKey();
-//        PostInfo post = new PostInfo();
-//        post.title = "test";
-//        post.period = "20110901 ~ 20170101";
-//        post.belong_to = "웹케시";
-//        post.rate = "100%";
-//        post.description = "afdsfasfdsfsaf 하하핳 ㅋㅋㅋㅋ";
-
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put(key, post.toMap());
 
@@ -70,7 +53,6 @@ public class MyTimeline {
                 Log.d("dilky", "TEST");
             }
         });
-
     }
 
     public static void Read(final ReceiveValueListener listener) {
@@ -82,7 +64,20 @@ public class MyTimeline {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<PostInfo> arrayList = new ArrayList<>();
                 for( DataSnapshot ds : dataSnapshot.getChildren()) {
-                    arrayList.add(ds.getValue(PostInfo.class));
+                    final PostInfo postInfo = ds.getValue(PostInfo.class);
+                    postInfo.postKey = ds.getKey();
+                    arrayList.add(postInfo);
+
+//                    // TODO : 타이밍 이슈 있음.
+//                    PostFeecback.ReadLikes(postInfo.postKey, new ReceiveValueListener() {
+//                        @Override
+//                        public void onDataReceive(Object data) {
+//                            PostFeecback.PostLikes postLikes = (PostFeecback.PostLikes) data;
+//                            postInfo.clickable = postLikes.clickable;
+//                            postInfo.countLikes = postLikes.countLikes;
+//
+//                        }
+//                    });
                 }
 
                 if (listener != null)
